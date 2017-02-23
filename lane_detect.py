@@ -121,6 +121,8 @@ def weighted_img(img, initial_img, α=0.8, β=1., λ=0.):
 def color_selected_hsv(img, white_low = np.uint8([20, 0, 200]), white_high = np.uint8([255, 45, 255]), yellow_low = np.uint8([10, 100, 100]), yellow_high = np.uint8([30, 255, 255])):
     """
     Convert Image to HSV and apply a mask for the color ranges including yellow and white
+
+    Ranges are based on suggestions on stackoverflow.
     """
     hsv_img = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
     # Create Yellow and White Color Range
@@ -133,7 +135,9 @@ def color_selected_hsv(img, white_low = np.uint8([20, 0, 200]), white_high = np.
 
 def color_selected_hls(img, white_low = np.uint8([0, 200, 0]), white_high = np.uint8([255, 255, 255]), yellow_low = np.uint8([0, 0, 100]), yellow_high = np.uint8([50, 255, 255])):
     """
-    Convert Image to HSL and apply a mask for the color ranges including yellow and white
+    Convert Image to HSL and apply a mask for the color ranges including yellow and white.
+
+    Ranges are based on suggestions on stackoverflow.
     """
     hls_img = cv2.cvtColor(img, cv2.COLOR_RGB2HLS)
     # Create Yellow and White Color Range
