@@ -1,5 +1,3 @@
----
-
 **Finding Lane Lines on the Road**
 
 The goals / steps of this project are the following:
@@ -10,12 +8,11 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./output_images/annotated_solidWhiteCurve.jpg "Annotated Solid White Curve"
-[image2]: ./output_images/plot_solidWhiteCurve.jpg "Plot of processing Steps"
----
+[image2]: ./output_images/plot_solidWhiteCurve.jpg.png "Plot of processing Steps"
 
 ### Reflection
 
-###1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
 My pipeline consisted of 7 steps. In addition all parameters for the steps were stored in a Dictionary.
 All steps after the first were performed on the ouput image of the previous step.
@@ -40,12 +37,14 @@ After seperating all lines into left and right an average was calculated for bot
 The extended Lines where then drawn onto the image.
 
 These steps can be seen in the Plot.
+
 ![Plot with steps 1-6][image2]
 
 The last step consisted of creating the result image with the extended lines as an overlay through the weighted_img function as seen in the next image.
+
 ![Final Image][image1]
 
-###2. Identify potential shortcomings with your current pipeline
+### 2. Identify potential shortcomings with your current pipeline
 
 One Shortcoming is currently the hardwired Parameters. Under strong lighting changes the color masking might produce large slabs of white which then would not allow for detection of the actual lines.
 
@@ -55,7 +54,7 @@ Curves in the Lane Lines are not detected as such. Currently only a straight lan
 
 I have not yet profiled the pipeline too see potential inefficient parts.
 
-###3. Suggest possible improvements to your pipeline
+### 3. Suggest possible improvements to your pipeline
 
 One Improvement would be to adjust parameters for following processing steps. For example the canny edge thresholds could be adjusted based on a gradient of the image before running the canny edge detection.
 Similar steps could be used before other processing steps like with the hough transformation thresholds.

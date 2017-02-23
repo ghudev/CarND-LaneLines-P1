@@ -173,7 +173,7 @@ def process_image(image):
     }
     # color selection and grayscaling
     img = color_selected_hls(image)
-    fig = plt.figure()
+    fig = plt.figure(figsize=(10,5), dpi=200)
     sp = fig.add_subplot(2,3,1)
     sp.set_title('HSL Color Selection')
     plt.imshow(img)
